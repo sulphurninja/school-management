@@ -1,11 +1,21 @@
 import mongoose from 'mongoose';
 
-const ResultSchema = new mongoose.Schema({
-  _id: Number,
+const ExamResultSchema = new mongoose.Schema({
+  _id: { type: Number, required: true },
+  examId: { type: Number, ref: 'Exam', required: true },
+  studentId: { type: String, ref: 'Student', required: true },
   score: { type: Number, required: true },
-  examId: { type: Number, ref: 'Exam' },
-  assignmentId: { type: Number, ref: 'Assignment' },
-  studentId: { type: String, ref: 'Student', required: true }
+  maxScore: { type: Number, default: 100 },
+  grade: { type: String, default: '' }, // A+, A, B+, etc.
+  percentage: { type: Number, default: 0 },
+  rank: { type: Number },
+  feedback: { type: String, default: '' },
+  submittedAt: { type: Date, default: Date.now },
+  gradedAt: { type: Date },
+  gradedBy: { type: String, ref: 'Teacher' }
+}, {
+  timestamps: true
 });
 
-export default mongoose.models.Result || mongoose.model('Result', ResultSchema);
+const ExamResult = mongoose.models.ExamResult || mongoose.model('ExamResult', ExamResultSchema);
+export default ExamResult;

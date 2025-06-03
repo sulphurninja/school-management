@@ -22,8 +22,11 @@ import {
   ClipboardList,
   BookMarked,
   PieChart,
-  MessageSquare
+  MessageSquare,
+  Car
 } from "lucide-react";
+import { PiExam } from "react-icons/pi";
+import { MdCoPresent } from "react-icons/md";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ThemeToggle } from "../ThemeToggle";
@@ -92,6 +95,8 @@ const teacherSections: SidebarSection[] = [
       { href: "/teacher/classes", label: "My Classes", icon: <BookMarked className="h-5 w-5" /> },
       { href: "/teacher/lessons", label: "Lessons", icon: <BookOpen className="h-5 w-5" /> },
       { href: "/teacher/students", label: "Students", icon: <GraduationCap className="h-5 w-5" /> },
+      { href: "/teacher/attendance", label: "Attendance", icon: <MdCoPresent /> },
+      { href: "/teacher/attendance/analytics", label: "Attendance Analytics", icon: <GraduationCap className="h-5 w-5" /> },
       { href: "/teacher/assignments", label: "Assignments", icon: <ClipboardList className="h-5 w-5" /> }
     ]
   },
@@ -116,9 +121,10 @@ const studentSections: SidebarSection[] = [
   {
     title: "Academics",
     links: [
-      { href: "/student/classes", label: "My Classes", icon: <BookMarked className="h-5 w-5" /> },
+      { href: "/student/lessons", label: "Video Lessons", icon: <BookMarked className="h-5 w-5" /> },
       { href: "/student/assignments", label: "Assignments", icon: <ClipboardList className="h-5 w-5" /> },
-      { href: "/student/results", label: "Results", icon: <PieChart className="h-5 w-5" /> }
+      { href: "/student/grades", label: "My Reports", icon: <PieChart className="h-5 w-5" /> },
+      { href: "/student/exams", label: "Exams", icon: <PiExam className="h-5 w-5" /> }
     ]
   },
   {
@@ -208,7 +214,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   // Function to get role display name
   const getRoleDisplay = () => {
-    switch(user.role) {
+    switch (user.role) {
       case 'admin': return 'Administrator';
       case 'teacher': return 'Teacher';
       case 'student': return 'Student';

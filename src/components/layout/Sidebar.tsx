@@ -146,7 +146,7 @@ export function Sidebar({ role, isOpen, onClose }: SidebarProps) {
         items = [
           ...items,
           {
-            title: "My Classes",
+            title: "My Exa",
             href: "/student/classes",
             icon: <School className="w-5 h-5" />,
           },
