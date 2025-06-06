@@ -51,7 +51,7 @@ const adminSections: SidebarSection[] = [
     title: "Overview",
     links: [
       { href: "/admin", label: "Dashboard", icon: <LayoutDashboard className="h-5 w-5" /> },
-      { href: "/admin/approvals", label: "Approvals", icon: <CheckCircle className="h-5 w-5" /> }
+      //{ href: "/admin/approvals", label: "Approvals", icon: <CheckCircle className="h-5 w-5" /> }
     ]
   },
   {
