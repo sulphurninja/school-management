@@ -157,12 +157,6 @@ export default function Login() {
             </form>
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
-            <div className="text-center text-sm">
-              Don't have an account?{" "}
-              <Link href="/register" className="font-medium text-primary hover:underline">
-                Create an account
-              </Link>
-            </div>
             <div className="text-center text-xs text-muted-foreground">
               By signing in, you agree to our{" "}
               <Link href="/terms" className="text-primary hover:underline">
