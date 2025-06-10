@@ -4,7 +4,7 @@ import { jwtDecode } from 'jwt-decode';
 import connectToDatabase from '@/lib/db';
 import Student from '@/models/Student';
 import Exam from '@/models/Exam';
-import ExamResult from '@/models/ExamResult';
+// import ExamResult from '@/models/ExamResult';
 
 export async function GET(request: Request) {
   try {
