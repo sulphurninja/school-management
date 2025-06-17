@@ -9,7 +9,8 @@ import {
   BookOpen,
   Calendar,
   ClipboardList,
-  Bell
+  Bell,
+  FileText
 } from "lucide-react";
 import { PiExam } from "react-icons/pi";
 import { useAuth } from "@/context/AuthContext";
@@ -55,7 +56,7 @@ export default function MobileBottomNav() {
 
   const navItems: NavItem[] = [
     { href: "/student", label: "Home", icon: <Home className="h-5 w-5" /> },
-    { href: "/student/schedule", label: "Schedule", icon: <Calendar className="h-5 w-5" /> },
+    { href: "/student/Report", label: "Report", icon: <FileText className="h-5 w-5" /> },
     { href: "/student/lessons", label: "Lessons", icon: <BookOpen className="h-5 w-5" /> },
     { 
       href: "/student/assignments", 
@@ -164,22 +165,7 @@ export default function MobileBottomNav() {
             </div>
             
             {/* Floating action button for quick action */}
-            <motion.div 
-              className="absolute -top-6 left-1/2 transform -translate-x-1/2"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Button 
-                size="icon" 
-                className="h-12 w-12 rounded-full shadow-lg bg-gradient-to-tr from-primary to-primary/80 text-primary-foreground"
-                onClick={() => {
-                  // You can implement a quick action menu that expands here
-                  // For example, showing a popover with message, assignment, and other quick actions
-                }}
-              >
-                <Bell className="h-5 w-5" />
-              </Button>
-            </motion.div>
+          
           </div>
         </motion.div>
       )}

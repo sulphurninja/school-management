@@ -175,7 +175,7 @@ export default function StudentProfile() {
         <h1 className="text-2xl font-bold">Student Profile</h1>
         <div className="flex items-center space-x-2">
           {!isEditing ? (
-            <Button onClick={() => setIsEditing(true)}>
+            <Button className="text-white" onClick={() => setIsEditing(true)}>
               <Edit3 className="h-4 w-4 mr-2" />
               Edit Profile
             </Button>

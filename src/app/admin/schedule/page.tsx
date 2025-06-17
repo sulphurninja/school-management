@@ -183,7 +183,7 @@ export default function TeacherSchedule() {
       </div>
       <Dialog open={showDialog} onOpenChange={setShowDialog}>
         <DialogTrigger asChild>
-          <Button size="sm" variant="default">+ Add Timetable</Button>
+          <Button className="text-white" size="sm" variant="default">+ Add Timetable</Button>
         </DialogTrigger>
         <DialogContent>
           <DialogTitle>Add Timetable Entry</DialogTitle>
@@ -207,14 +207,14 @@ export default function TeacherSchedule() {
 
 
       <Tabs defaultValue="week" className="mb-6" onValueChange={setActiveTab}>
-        <div className="flex items-center justify-between mb-4">
+        <div className="md:flex mt-4 md:mt-0 items-center justify-between mb-4">
           <TabsList>
             <TabsTrigger value="week">Weekly View</TabsTrigger>
             <TabsTrigger value="day">Daily View</TabsTrigger>
             <TabsTrigger value="list">List View</TabsTrigger>
           </TabsList>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex mt-4 md:mt-0 items-center space-x-2">
             <Button variant="outline" size="sm" onClick={goToPreviousWeek}>
               <ChevronLeft className="h-4 w-4" />
             </Button>
